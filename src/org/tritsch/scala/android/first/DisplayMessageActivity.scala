@@ -8,7 +8,7 @@ import android.view.MenuItem
 import android.widget.TextView
 
 object DisplayMessageActivity {
-  val TAG = "DisplayMessageActivity"
+  val TAG = classOf[DisplayMessageActivity].getName
 }
 
 class DisplayMessageActivity extends Activity {
@@ -37,11 +37,12 @@ class DisplayMessageActivity extends Activity {
 
   override def onOptionsItemSelected(item: MenuItem): Boolean = {
     Log.d(DisplayMessageActivity.TAG, "Enter - onOptionsItemSelected()")
-    if(item.getItemId() == android.R.id.home) {
-      NavUtils.navigateUpFromSameTask(this)
-      true
-    } else {
-      super.onOptionsItemSelected(item)
+    item.getItemId match {
+      case android.R.id.home => {
+        NavUtils.navigateUpFromSameTask(this)
+        true
+      }
+      case _ => super.onOptionsItemSelected(item)
     }
   }
 }

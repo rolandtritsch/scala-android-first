@@ -29,3 +29,7 @@ What you need to do to make it work ...
 ## v1.2-basic
 
 * Fixed the README and using `s"..."` to format the debug messages (only works after fixing the ProGuard issue)
+
+## v1.3-basic
+
+* Adding an about dialog
