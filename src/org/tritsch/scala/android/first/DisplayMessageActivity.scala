@@ -23,8 +23,8 @@ class DisplayMessageActivity extends Activity {
     }
 
     // Extract the message from the intent that this activity is processing
-    val message = getIntent.getStringExtra(FirstActivity.EXTRA_MESSAGE)
-    //Log.d(DisplayMessageActivity.TAG, s"Message - >${message}<")
+    val message = getIntent.getStringExtra(FirstActivity.EXTRA_MESSAGE).reverse.toUpperCase
+    Log.d(DisplayMessageActivity.TAG, "Message - >" + message + "<")
 
     // Create the text view
     val textView = new TextView(this)
