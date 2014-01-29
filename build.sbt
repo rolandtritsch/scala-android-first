@@ -16,6 +16,9 @@ scalacOptions in Compile += "-feature"
 // for non-ant-based projects, you'll need this for the specific build target
 platformTarget in Android := "android-19"
 
+// use this if you have problems with "classNotFound" exceptions at runtime
+proguardOptions in Android := Seq("-dontobfuscate", "-dontoptimize")
+
 // call install and run without having to prefix with android
 run <<= run in Android
 
